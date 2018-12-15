@@ -70,9 +70,9 @@ public abstract class Order {
         this.totalPrice = totalPrice;
     }
 
-    public abstract void validateOrder();
+    protected abstract void validateOrder();
 
-    public abstract void calculatePrice();
+    protected abstract void calculatePrice();
 
     void confirmShipping() {
         if (dateShipped == null) {
