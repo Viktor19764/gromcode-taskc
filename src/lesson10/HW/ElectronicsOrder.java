@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class ElectronicsOrder extends Order {
-    int guaranteeMonths;
+    private int guaranteeMonths;
 
     public ElectronicsOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, int guaranteeMonths) {
         super(itemName, dateCreated, shipFromCity, shipToCity, basePrice, customerOwned);
