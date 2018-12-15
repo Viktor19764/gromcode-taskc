@@ -12,7 +12,7 @@ public class ElectronicsOrder extends Order {
     }
 
     @Override
-    void validateOrder() {
+    public void validateOrder() {
         String[] cities = {"Киев", "Одесса", "Днепр", "Харьков"};
         int minPrice = 100;
         String gender = "Женский";
@@ -25,7 +25,7 @@ public class ElectronicsOrder extends Order {
     }
 
     @Override
-    void calculatePrice() {
+    public void calculatePrice() {
         if (getDateShipped() != null) {
             if (getShipToCity() == "Киев" || getShipToCity() == "Одесса") {
                 setTotalPrice(getBasePrice() * 1.1);

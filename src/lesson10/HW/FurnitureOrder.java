@@ -12,7 +12,7 @@ public class FurnitureOrder extends Order{
     }
 
     @Override
-    void validateOrder() {
+    public void validateOrder() {
         String[] cities = {"Киев", "Львов"};
         int minPrice = 500;
         String name = "Тест";
@@ -26,7 +26,7 @@ public class FurnitureOrder extends Order{
     }
 
     @Override
-    void calculatePrice() {
+    public void calculatePrice() {
         if (getDateShipped() != null) {
             if (getBasePrice() < 5000)
                 setTotalPrice(getBasePrice() * 1.05);
