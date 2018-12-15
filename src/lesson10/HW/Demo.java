@@ -6,8 +6,8 @@ public class Demo {
 
     public static void main(String[] args) {
 
-        ElektronicsOrder elektronicsOrder1 = new ElektronicsOrder("Ноутбук",new Date(), "Киев", "Одесса", 22000, new Customer("Лидия Иваненко", "Одесса", "Женский"), 12);
-        ElektronicsOrder elektronicsOrder2 = new ElektronicsOrder("Ноутбук",new Date(), "Винница", "Одесса", 22000, new Customer("Лидия Иваненко", "Одесса", "Женский"), 12);
+        ElectronicsOrder elektronicsOrder1 = new ElectronicsOrder("Ноутбук",new Date(), "Киев", "Одесса", 22000, new Customer("Лидия Иваненко", "Одесса", "Женский"), 12);
+        ElectronicsOrder elektronicsOrder2 = new ElectronicsOrder("Ноутбук",new Date(), "Винница", "Одесса", 22000, new Customer("Лидия Иваненко", "Одесса", "Женский"), 12);
 
         FurnitureOrder furnitureOrder1 = new FurnitureOrder("Wi-Fi розетка", new  Date(), "Киев", "Херсон", 500, new Customer("Петр Петренко", "Херсон", "Мужской"), "1111");
         FurnitureOrder furnitureOrder2 = new FurnitureOrder("Стол для компьютера", new  Date(), "Чернигов", "Херсон", 1000, new Customer("Василий  Васильченко", "Херсон", "Мужской"), "2222");
