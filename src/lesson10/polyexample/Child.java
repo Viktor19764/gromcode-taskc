@@ -1,4 +1,4 @@
-package Lesson10;
+package lesson10.polyexample;
 
 public class Child extends Human {
 
@@ -8,7 +8,7 @@ public class Child extends Human {
 
     @Override
     void run() {
-        System.out.println("Child class called...");
+        System.out.println("Child class is called...");
         super.run();
     }
 }

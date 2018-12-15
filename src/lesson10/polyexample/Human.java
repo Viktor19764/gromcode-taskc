@@ -1,4 +1,4 @@
-package Lesson10;
+package lesson10.polyexample;
 
 public class Human {
     private String name;
@@ -7,7 +7,8 @@ public class Human {
         this.name = name;
     }
 
-    void run(){
+    void run() {
+        System.out.println("Human class is called...");
         System.out.println(name + " is running");
     }
 }
