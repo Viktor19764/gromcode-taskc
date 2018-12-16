@@ -26,7 +26,7 @@ public class ElectronicsOrder extends Order {
 
     @Override
     public void calculatePrice() {
-        if (getDateShipped() != null) {
+        if (getCustomerOwned() != null) {
             if (getShipToCity() == "Киев" || getShipToCity() == "Одесса") {
                 setTotalPrice(getBasePrice() * 1.1);
             } else
