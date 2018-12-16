@@ -31,7 +31,7 @@ public class FurnitureOrder extends Order {
             if (getBasePrice() < 5000)
                 setTotalPrice(getBasePrice() * 1.05);
             else
-                setTotalPrice(getBasePrice() * 1.05);
+                setTotalPrice(getBasePrice() * 1.02);
 
             System.out.println("Total price is " + (int) getTotalPrice());
         }
