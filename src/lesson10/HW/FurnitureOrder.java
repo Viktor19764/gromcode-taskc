@@ -3,7 +3,7 @@ package lesson10.HW;
 import java.util.Arrays;
 import java.util.Date;
 
-public class FurnitureOrder extends Order{
+public class FurnitureOrder extends Order {
     private String furnitureCode;
 
     public FurnitureOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, String furnitureCode) {
@@ -16,7 +16,7 @@ public class FurnitureOrder extends Order{
         String[] cities = {"Киев", "Львов"};
         int minPrice = 500;
         String name = "Тест";
-        if (Arrays.asList(cities).contains(getShipFromCity()) && getBasePrice() >= minPrice && getCustomerOwned().getName() != name) {
+        if (getCustomerOwned() != null && Arrays.asList(cities).contains(getShipFromCity()) && getBasePrice() >= minPrice && getCustomerOwned().getName() != name) {
             System.out.println("Order is validated");
             confirmShipping();
 

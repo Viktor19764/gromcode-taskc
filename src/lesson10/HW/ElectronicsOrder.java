@@ -16,7 +16,7 @@ public class ElectronicsOrder extends Order {
         String[] cities = {"Киев", "Одесса", "Днепр", "Харьков"};
         int minPrice = 100;
         String gender = "Женский";
-        if (Arrays.asList(cities).contains(getShipToCity()) && Arrays.asList(cities).contains(getShipFromCity()) && getBasePrice() >= minPrice && getCustomerOwned().getGender() == gender) {
+        if (getCustomerOwned() != null && getCustomerOwned().getCity() == getShipToCity() && Arrays.asList(cities).contains(getShipFromCity()) && Arrays.asList(cities).contains(getShipToCity()) && getBasePrice() >= minPrice && getCustomerOwned().getGender() == gender) {
             System.out.println("Order is validated");
             confirmShipping();
 
