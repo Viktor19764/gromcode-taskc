@@ -12,46 +12,25 @@ public class Demo {
         FurnitureOrder furnitureOrder1 = new FurnitureOrder("Wi-Fi розетка", new Date(), "Киев", "Херсон", 500, new Customer("Петр Петренко", "Херсон", "Мужской"), "1111");
         FurnitureOrder furnitureOrder2 = new FurnitureOrder("Стол для компьютера", new Date(), "Чернигов", "Херсон", 1000, new Customer("Василий  Васильченко", "Херсон", "Мужской"), "2222");
 
-        elektronicsOrder1.validateOrder();
-        if (elektronicsOrder1.getDateConfirmed() != null) {
-            System.out.println("Order is validated");
-            elektronicsOrder1.calculatePrice();
-            System.out.println("Total price is " +  String.format("%.2f", elektronicsOrder1.getTotalPrice()));
-            elektronicsOrder1.confirmShipping();
-        }
-        else System.out.println("Order is no validated");
+        outputInfoAboutOrder ((ElectronicsOrder) elektronicsOrder1);
+        outputInfoAboutOrder ((ElectronicsOrder) elektronicsOrder2);
+        outputInfoAboutOrder ((FurnitureOrder) furnitureOrder1);
+        outputInfoAboutOrder ((FurnitureOrder) furnitureOrder2);
 
-        System.out.println("-------------------");
-
-        elektronicsOrder2.validateOrder();
-        if (elektronicsOrder2.getDateConfirmed() != null) {
-            System.out.println("Order is validated");
-            elektronicsOrder2.calculatePrice();
-            System.out.println("Total price is " +  String.format("%.2f", elektronicsOrder1.getTotalPrice()));
-            elektronicsOrder2.confirmShipping();
-        }
-        else System.out.println("Order is no validated");
-        System.out.println("-------------------");
-
-        furnitureOrder1.validateOrder();
-        if (furnitureOrder1.getDateConfirmed() != null) {
-            System.out.println("Order is validated");
-            furnitureOrder1.calculatePrice();
-            System.out.println("Total price is " +  String.format("%.2f", furnitureOrder1.getTotalPrice()));
-            furnitureOrder1.confirmShipping();
-        }
-        else System.out.println("Order is no validated");
-
-        System.out.println("-------------------");
-
-        furnitureOrder2.validateOrder();
-        if (furnitureOrder2.getDateConfirmed() != null) {
-            System.out.println("Order is validated");
-            furnitureOrder2.calculatePrice();
-            System.out.println("Total price is " +  String.format("%.2f", furnitureOrder2.getTotalPrice()));
-            furnitureOrder2.confirmShipping();
-        }
-        else System.out.println("Order is no validated");
 
     }
+
+    private static <T extends Order> void outputInfoAboutOrder (T order) {
+        order.validateOrder();
+        if (order.getDateConfirmed() != null) {
+            System.out.println("Order is validated");
+            order.calculatePrice();
+            System.out.println("Total price is " +  String.format("%.2f", order.getTotalPrice()));
+            order.confirmShipping();
+        }
+        else System.out.println("Order is no validated");
+        System.out.println("-------------------");
+    }
+
+
 }
