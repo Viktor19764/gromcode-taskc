@@ -108,7 +108,7 @@ public class UserRepository {
         return null;
     }
 
-    private User findById(long id) {
+    public User findById(long id) {
         int count = 0;
         for (User user : users) {
             if ((user != null) && (user.getId() == id))
