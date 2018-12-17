@@ -17,7 +17,7 @@ public class FurnitureOrder extends Order {
         int minPrice = 500;
         String name = "Тест";
         if (getCustomerOwned() != null && Arrays.asList(cities).contains(getShipFromCity()) && getBasePrice() >= minPrice && getCustomerOwned().getName() != name) {
-            setDateConfirmed (new Date());
+            setDateConfirmed(new Date());
 
         }
     }

@@ -12,23 +12,22 @@ public class Demo {
         FurnitureOrder furnitureOrder1 = new FurnitureOrder("Wi-Fi розетка", new Date(), "Киев", "Херсон", 500, new Customer("Петр Петренко", "Херсон", "Мужской"), "1111");
         FurnitureOrder furnitureOrder2 = new FurnitureOrder("Стол для компьютера", new Date(), "Чернигов", "Херсон", 1000, new Customer("Василий  Васильченко", "Херсон", "Мужской"), "2222");
 
-        outputInfoAboutOrder ((ElectronicsOrder) elektronicsOrder1);
-        outputInfoAboutOrder ((ElectronicsOrder) elektronicsOrder2);
-        outputInfoAboutOrder ((FurnitureOrder) furnitureOrder1);
-        outputInfoAboutOrder ((FurnitureOrder) furnitureOrder2);
+        outputInfoAboutOrder((ElectronicsOrder) elektronicsOrder1);
+        outputInfoAboutOrder((ElectronicsOrder) elektronicsOrder2);
+        outputInfoAboutOrder((FurnitureOrder) furnitureOrder1);
+        outputInfoAboutOrder((FurnitureOrder) furnitureOrder2);
 
 
     }
 
-    private static <T extends Order> void outputInfoAboutOrder (T order) {
+    private static <T extends Order> void outputInfoAboutOrder(T order) {
         order.validateOrder();
         if (order.getDateConfirmed() != null) {
             System.out.println("Order is validated");
             order.calculatePrice();
-            System.out.println("Total price is " +  String.format("%.2f", order.getTotalPrice()));
+            System.out.println("Total price is " + String.format("%.2f", order.getTotalPrice()));
             order.confirmShipping();
-        }
-        else System.out.println("Order is no validated");
+        } else System.out.println("Order is no validated");
         System.out.println("-------------------");
     }
 

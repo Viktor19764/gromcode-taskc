@@ -17,7 +17,7 @@ public class ElectronicsOrder<sout> extends Order {
         int minPrice = 100;
         String gender = "Женский";
         if (getCustomerOwned() != null && Arrays.asList(cities).contains(getShipFromCity()) && Arrays.asList(cities).contains(getShipToCity()) && getBasePrice() >= minPrice && getCustomerOwned().getGender() == gender) {
-            setDateConfirmed (new Date());
+            setDateConfirmed(new Date());
 
         }
     }
@@ -25,7 +25,7 @@ public class ElectronicsOrder<sout> extends Order {
     @Override
     public void calculatePrice() {
         if (getCustomerOwned() != null) {
-            double shipmentPrice  = 0;
+            double shipmentPrice = 0;
             if (getShipToCity() == "Киев" || getShipToCity() == "Одесса")
                 shipmentPrice = getBasePrice() * 0.1;
             if (getShipToCity() == "Днепр" || getShipToCity() == "Харьков")
@@ -34,8 +34,7 @@ public class ElectronicsOrder<sout> extends Order {
             if (totalPrice > 1000)
                 setTotalPrice(totalPrice * 0.95);
             else setTotalPrice(totalPrice);
-        }
-        else
+        } else
             System.out.println("Incorrect orderdata");
     }
 
