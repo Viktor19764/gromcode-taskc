@@ -77,7 +77,6 @@ public abstract class Order {
     public void confirmShipping() {
         if (dateShipped == null) {
             dateShipped = new Date();
-            System.out.println("Shipping is confirmed");
         }
     }
 }
