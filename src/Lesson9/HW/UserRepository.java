@@ -113,7 +113,7 @@ public class UserRepository {
         for (User user : users) {
             if ((user != null) && (user.getId() == id))
                 return users[count];
-        count++;
+            count++;
         }
         return null;
     }
@@ -133,9 +133,9 @@ public class UserRepository {
     public void delete(long id) {
         int count = 0;
         for (User user : users) {
-            if ((user != null) && (user.getId() == id))
+            if (user != null && user.getId() == id)
                 users[count] = null;
-         count++;
+            count++;
         }
     }
 }
