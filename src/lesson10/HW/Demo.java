@@ -12,15 +12,15 @@ public class Demo {
         FurnitureOrder furnitureOrder1 = new FurnitureOrder("Wi-Fi розетка", new Date(), "Киев", "Херсон", 500, new Customer("Петр Петренко", "Херсон", "Мужской"), "1111");
         FurnitureOrder furnitureOrder2 = new FurnitureOrder("Стол для компьютера", new Date(), "Чернигов", "Херсон", 1000, new Customer("Василий  Васильченко", "Херсон", "Мужской"), "2222");
 
-        outputInfoAboutOrder((ElectronicsOrder) elektronicsOrder1);
-        outputInfoAboutOrder((ElectronicsOrder) elektronicsOrder2);
-        outputInfoAboutOrder((FurnitureOrder) furnitureOrder1);
-        outputInfoAboutOrder((FurnitureOrder) furnitureOrder2);
+        outputInfoAboutOrder((Order) elektronicsOrder1);
+        outputInfoAboutOrder((Order) elektronicsOrder2);
+        outputInfoAboutOrder((Order) furnitureOrder1);
+        outputInfoAboutOrder((Order) furnitureOrder2);
 
 
     }
 
-    private static <T extends Order> void outputInfoAboutOrder(T order) {
+    private static void outputInfoAboutOrder(Order order) {
         order.validateOrder();
         if (order.getDateConfirmed() != null) {
             System.out.println("Order is validated");
