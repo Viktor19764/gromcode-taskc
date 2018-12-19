@@ -38,7 +38,7 @@ public class ChinaBank extends Bank{
     public double getCommission(int amount) {
         if(getCurrency() == Currency.USD){
             if(amount <= 1000)
-                return 0.3;
+                return 0.03;
             else
                 return 0.05;
         } else {
