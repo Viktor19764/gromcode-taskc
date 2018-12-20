@@ -30,7 +30,7 @@ public class Main {
             System.out.println(user.getBalance());
             i++;
             if (i <= users.length - 1)
-                bankSystem.transferMoney(users[i - 1], users[i], 200);
+                bankSystem.transferMoney(users[i - 1], users[i], 50);
             System.out.println(user.getBalance());
         }
 

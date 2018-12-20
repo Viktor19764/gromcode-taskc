@@ -4,10 +4,6 @@ public class UkrainianBankSystem implements BankSystem {
 
     @Override
     public void withdraw(User user, int amount) {
-        //перевірити чи можна зняти
-        // перевірити ліміт
-        // перевірити чи досить грошей
-        //зняти гроші
 
         if (!checkWithdraw(user, amount)) {
             printWithdrawalErrorMsg(amount, user);
@@ -26,19 +22,12 @@ public class UkrainianBankSystem implements BankSystem {
 
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
-        //знімаємо гроші з fromUser
-        //поповнюємо toUser
         if (!checkWithdraw(fromUser, amount))
             return;
         if (!checkFunding(toUser, amount))
             return;
         if (fromUser.getBank().getCurrency() == toUser.getBank().getCurrency()) {
             withdraw(fromUser, amount);
-            //if (!checkWithdraw(fromUser, amount))
-            //return;
-
-            //fromUser.setBalance(fromUser.getBalance() - amount - amount * fromUser.getBank().getCommission(amount));
-
             fund(toUser, amount);
         }
     }
@@ -67,7 +56,6 @@ public class UkrainianBankSystem implements BankSystem {
 
     private boolean checkFunding(User user, int amount) {
         return user.getBank().getLimitOfFunding() >= amount ? true: false;
-        //return checkTransferLimits(user, amount, user.getBank().getLimitOfFunding());
     }
 
 }
