@@ -21,7 +21,7 @@ public class UkrainianBankSystem implements BankSystem {
     public void fund(User user, int amount) {
         if (!checkFunding(user, amount))
             return;
-        user.setBalance(user.getBalance() + amount - amount * user.getBank().getCommission(amount));
+        user.setBalance(user.getBalance() + amount);
     }
 
     @Override
