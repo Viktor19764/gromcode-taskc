@@ -40,8 +40,7 @@ public class UkrainianBankSystem implements BankSystem {
             //fromUser.setBalance(fromUser.getBalance() - amount - amount * fromUser.getBank().getCommission(amount));
 
             fund(toUser, amount);
-        } else
-            System.out.println("Transfer error");
+        }
     }
 
     @Override
@@ -56,10 +55,10 @@ public class UkrainianBankSystem implements BankSystem {
     }
 
     private boolean checkWithdraw(User user, int amount) {
-        return checkTransferLimits(user, amount, user.getBank().getLimitOfWithdrawal()) && checkTransferLimits(user, amount, user.getBalance());
+        return checkWithdrawLimits(user, amount, user.getBank().getLimitOfWithdrawal()) && checkTransferLimits(user, amount, user.getBalance());
     }
 
-    private boolean checkTransferLimits(User user, int amount, double limit) {
+    private boolean checkWithdrawLimits(User user, int amount, double limit) {
         if (amount + amount * user.getBank().getCommission(amount) > limit) {
             return false;
         }
@@ -67,7 +66,7 @@ public class UkrainianBankSystem implements BankSystem {
     }
 
     private boolean checkFunding(User user, int amount) {
-        return user.getBank().getLimitOfFunding() >= amount ? true: false;
+        return user.getBank().getLimitOfFunding() > amount ? true: false;
         //return checkTransferLimits(user, amount, user.getBank().getLimitOfFunding());
     }
 
