@@ -55,7 +55,7 @@ public class UkrainianBankSystem implements BankSystem {
     }
 
     private boolean checkWithdraw(User user, int amount) {
-        return checkWithdrawLimits(user, amount, user.getBank().getLimitOfWithdrawal()) && checkTransferLimits(user, amount, user.getBalance());
+        return checkWithdrawLimits(user, amount, user.getBank().getLimitOfWithdrawal()) && checkWithdrawLimits(user, amount, user.getBalance());
     }
 
     private boolean checkWithdrawLimits(User user, int amount, double limit) {
@@ -66,7 +66,7 @@ public class UkrainianBankSystem implements BankSystem {
     }
 
     private boolean checkFunding(User user, int amount) {
-        return user.getBank().getLimitOfFunding() > amount ? true: false;
+        return user.getBank().getLimitOfFunding() >= amount ? true: false;
         //return checkTransferLimits(user, amount, user.getBank().getLimitOfFunding());
     }
 
