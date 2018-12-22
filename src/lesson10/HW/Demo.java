@@ -21,14 +21,30 @@ public class Demo {
     }
 
     private static void outputInfoAboutOrder(Order order) {
+        //test validateOrder()
+        //if validated
+        //if no validated
+        System.out.println("validate order:");
+        System.out.println(order);
         order.validateOrder();
-        if (order.getDateConfirmed() != null) {
-            System.out.println("Order is validated");
-            order.calculatePrice();
-            System.out.println("Total price is " + String.format("%.2f", order.getTotalPrice()));
-            order.confirmShipping();
-        } else System.out.println("Order is no validated");
-        System.out.println("-------------------");
+        System.out.println(order);
+        System.out.println("//---//---//");
+        //test calculatePrice()
+        //if validated
+        //if no validated
+        System.out.println("calculate price:");
+        order.calculatePrice();
+        System.out.println(order);
+        System.out.println("//---//---//");
+        //test confirmShipping()
+        //if validated
+        //if no validated
+        System.out.println("confirm shipping:");
+        order.confirmShipping();
+        System.out.println(order);
+        System.out.println("//---//---//");
+        System.out.println("//---//---//");
+
     }
 
 
