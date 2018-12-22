@@ -2,9 +2,10 @@ package lesson4.HW;
 
 public class CompareSum {
 
+    public CompareSum() {
+    }
 
-
-    static long sum (int from, int to){
+    public static long sum (int from, int to){
         long sum = 0;
         for (long i = from; i <= to; i++)
             sum += i;
@@ -18,8 +19,8 @@ public class CompareSum {
 
 
 
-    public static void main(String[] args) {
-        System.out.println(compareSums(2,100, 3, 101));
-
-    }
+//    public static void main(String[] args) {
+//        System.out.println(compareSums(2,100, 3, 101));
+//
+//    }
 }
