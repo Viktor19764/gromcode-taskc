@@ -13,9 +13,6 @@ public class Order {
     String country;
     String type;
 
-    public Order() {
-    }
-
     public Order(int price, Date dateCreated, boolean isConfirmed, Date dateConfirmed, String city, String country, String type) {
         this.price = price;
         this.dateCreated = dateCreated;
@@ -41,5 +38,19 @@ public class Order {
 
     public boolean isValidType() {
         return (type == "Buy" || type == "Sale") ? true : false;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", price=" + price +
+                ", dateCreated=" + dateCreated +
+                ", isConfirmed=" + isConfirmed +
+                ", dateConfirmed=" + dateConfirmed +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }
