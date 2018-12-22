@@ -1,8 +1,12 @@
 package lesson5.HW;
 
+import lesson4.HW.StringConcatenation;
+
 import java.util.Arrays;
 
 public class WithdrawMoney {
+    String[] names;
+    int[] balances = {100, 500, 8432, -99, -2147483648, -54, 0};
 
     public static void main(String[] args) {
 
