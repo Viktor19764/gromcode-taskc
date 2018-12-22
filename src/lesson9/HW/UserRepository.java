@@ -1,7 +1,10 @@
 package lesson9.HW;
 
 public class UserRepository {
-    private User[] users;
+    private User[] users = new User[10];
+
+    public UserRepository() {
+    }
 
     public UserRepository(User[] users) {
         this.users = users;
@@ -82,6 +85,9 @@ public class UserRepository {
 
     //4
     public User save(User user) {
+        if (user == null) {
+            return null;
+        }
         //if user is in array, return null
         for (User userEl : users) {
             if (userEl != null && userEl.getId() == user.getId())
@@ -124,8 +130,10 @@ public class UserRepository {
     public void delete(long id) {
         int count = 0;
         for (User user : users) {
-            if (user != null && user.getId() == id)
+            if (user != null && user.getId() == id) {
                 users[count] = null;
+                user = null;
+            }
             count++;
         }
     }
