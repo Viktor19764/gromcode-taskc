@@ -10,16 +10,18 @@ public class UniqueCountClass {
 
     }
 
-    public static int uniqueCount(int[] array){
+    public static int uniqueCount(int[] array) {
+        if (array.length == 0)
+            return 0;
         sortAscending(array);
         int count = 1;
 
 
         for (int j = 1; j < array.length; j++) {
-           if (array[j] != array[j-1])
-               count++;
+            if (array[j] != array[j - 1])
+                count++;
         }
-        return  count;
+        return count;
 
     }
 
