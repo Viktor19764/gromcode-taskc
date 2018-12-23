@@ -2,20 +2,20 @@ package lesson14;
 
 public class Demo {
     public static void main(String[] args) {
-        Object oojectTest = new Object();
+        Object objectTest = new Object();
 
-        System.out.println(oojectTest.toString());
-        System.out.println(oojectTest.getClass().getName());
+        System.out.println(objectTest.toString());
+        System.out.println(objectTest.getClass().getName());
 
-        oojectTest = new Object();
+        objectTest = new Object();
 
-        System.out.println(oojectTest.toString());
-        System.out.println(oojectTest.getClass().getName());
+        System.out.println(objectTest.toString());
+        System.out.println(objectTest.getClass().getName());
 
-        oojectTest = new Object();
+        objectTest = new Object();
 
-        System.out.println(oojectTest.toString());
-        System.out.println(oojectTest.getClass().getName());
+        System.out.println(objectTest.toString());
+        System.out.println(objectTest.getClass().getName());
 
     }
 }
