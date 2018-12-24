@@ -1,6 +1,8 @@
 package lesson11.HW;
 
-public class GoogleAPI implements API{
+import java.util.Arrays;
+
+public class GoogleAPI implements API {
     Room[] rooms;
 
     public GoogleAPI(Room[] rooms) {
@@ -18,7 +20,7 @@ public class GoogleAPI implements API{
         Room[] appropriateRooms = new Room[i];
         i = 0;
         for (Room el : rooms) {
-            if (price == el.getPrice() && persons == el.getPersons() && city == el.getCityName() && hotel == el.getHotelName()) {
+            if (el != null && price == el.getPrice() && persons == el.getPersons() && city == el.getCityName() && hotel == el.getHotelName()) {
                 appropriateRooms[i] = el;
                 i++;
             }
@@ -29,5 +31,12 @@ public class GoogleAPI implements API{
     @Override
     public Room[] getAll() {
         return rooms;
+    }
+
+    @Override
+    public String toString() {
+        return "GoogleAPI{" +
+                "rooms=" + Arrays.toString(rooms) +
+                '}';
     }
 }

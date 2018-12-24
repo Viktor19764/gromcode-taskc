@@ -41,7 +41,7 @@ public class Demo {
 
         BookingComAPI bookingComAPI1 = new BookingComAPI(rooms1);
         TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI(rooms2);
-        GoogleAPI googleAPI = new GoogleAPI(rooms1);
+        GoogleAPI googleAPI = new GoogleAPI(rooms2);
 
 
         API[] apis = new API[10];
@@ -70,16 +70,30 @@ public class Demo {
         System.out.println("2------------2");
         for (Room el : controller.requestRooms(211, 2, "SomeCity1", "SomeHotel3")) {
             if (el != null)
-                System.out.println("reqyestRooms   " + el.hotelName+ "  id  " + el.getId());
+                System.out.println("reqyestRooms   " + el.hotelName + "  id  " + el.getId());
         }
 
         System.out.println("3------------3");
-        for(Room el : controller.check(bookingComAPI1, tripAdvisorAPI)){
-            if(el != null){
-                System.out.println("check API   " + el.hotelName+ "  id  " + el.getId());
+        for (Room el : controller.check(bookingComAPI1, tripAdvisorAPI)) {
+            if (el != null) {
+                System.out.println("check API   " + el.hotelName + "  id  " + el.getId());
             }
         }
 
+
+        API[] apisTest = new API[10];
+        apisTest[1] = googleAPI;
+        apisTest[2] = bookingComAPI1;
+        Controller controllerTest = new Controller(apisTest);
+        System.out.println("Test started");
+        System.out.println("-------------------");
+        System.out.println(Arrays.deepToString(googleAPI.getAll()) + " Google API");
+        System.out.println(Arrays.deepToString(bookingComAPI1.getAll()) + " Booking API");
+        System.out.println(Arrays.deepToString(bookingComAPI1.findRooms(222, 2, "22222", "22222")));
+        System.out.println(Arrays.deepToString(googleAPI.findRooms(222, 2, "22222", "22222")));
+
+        System.out.println();
+        System.out.println(Arrays.deepToString(controller.check(googleAPI, bookingComAPI1)));
 
     }
 }

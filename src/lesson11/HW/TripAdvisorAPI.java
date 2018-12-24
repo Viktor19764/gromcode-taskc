@@ -1,5 +1,7 @@
 package lesson11.HW;
 
+import java.util.Arrays;
+
 public class TripAdvisorAPI implements API {
     private Room[] rooms;
 
@@ -33,5 +35,12 @@ public class TripAdvisorAPI implements API {
     @Override
     public Room[] getAll() {
         return rooms;
+    }
+
+    @Override
+    public String toString() {
+        return "TripAdvisorAPI{" +
+                "rooms=" + Arrays.toString(rooms) +
+                '}';
     }
 }
