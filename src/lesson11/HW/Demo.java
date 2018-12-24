@@ -89,8 +89,8 @@ public class Demo {
         System.out.println("-------------------");
         System.out.println(Arrays.deepToString(googleAPI.getAll()) + " Google API");
         System.out.println(Arrays.deepToString(bookingComAPI1.getAll()) + " Booking API");
-        System.out.println(Arrays.deepToString(bookingComAPI1.findRooms(222, 2, "22222", "22222")));
-        System.out.println(Arrays.deepToString(googleAPI.findRooms(222, 2, "22222", "22222")));
+        System.out.println(Arrays.deepToString(bookingComAPI1.findRooms(222, 2, "Citycity", "Star")));
+        System.out.println(Arrays.deepToString(googleAPI.findRooms(222, 2, "Citycity", "Star")));
 
         System.out.println();
         System.out.println(Arrays.deepToString(controller.check(googleAPI, bookingComAPI1)));
