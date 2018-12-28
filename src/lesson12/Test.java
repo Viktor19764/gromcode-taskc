@@ -142,7 +142,7 @@ public class Test {
         System.out.println("--------------------------------------");
         System.out.println("--------------------------------------");
 
-        System.out.println("Start testing  transferMoney USBank - EUBank");
+        System.out.println("Start testing  paySalary");
         System.out.println("testing paySalary");
         //withdraw
         System.out.println("paySalary USBank, before " + user3.getBalance());
