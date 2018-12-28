@@ -22,6 +22,8 @@ public abstract class Order {
         this.customerOwned = customerOwned;
     }
 
+
+
     public String getItemName() {
         return itemName;
     }
@@ -78,5 +80,20 @@ public abstract class Order {
         if (dateShipped == null) {
             dateShipped = new Date();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "itemName='" + itemName + '\'' +
+                ", dateCreated=" + dateCreated +
+                ", dateConfirmed=" + dateConfirmed +
+                ", dateShipped=" + dateShipped +
+                ", shipFromCity='" + shipFromCity + '\'' +
+                ", shipToCity='" + shipToCity + '\'' +
+                ", basePrice=" + basePrice +
+                ", totalPrice=" + totalPrice +
+                ", customerOwned=" + customerOwned +
+                '}';
     }
 }

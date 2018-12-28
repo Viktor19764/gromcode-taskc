@@ -31,4 +31,6 @@ public class FurnitureOrder extends Order {
                 setTotalPrice(getBasePrice() * 1.02);
         }
     }
+
+
 }
