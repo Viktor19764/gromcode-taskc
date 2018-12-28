@@ -116,6 +116,8 @@ public class UserRepository {
     }
 
     public User update(User user) {
+        if (user == null)
+                return null;
         int count = 0;
         for (User userEl : users) {
             if ((userEl != null) && (userEl.getId() == user.getId())) {
