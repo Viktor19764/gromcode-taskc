@@ -1,5 +1,7 @@
 package lesson15.HW;
 
+import java.util.Date;
+
 public class Controller {
     private API[] apis;
 
@@ -9,10 +11,12 @@ public class Controller {
 
     public Room[] requestRooms(int price, int persons, String city, String hotel) {
         int i = 0;
+        Room room=new Room(0,price,persons,new Date(), hotel,city);
         for (API api : apis) {
             if (api != null) {
                 for (Room el : api.getAll()) {
-                    if (el != null && price == el.getPrice() && persons == el.getPersons() && city == el.getCityName() && hotel == el.getHotelName())
+                    //if (el != null && price == el.getPrice() && persons == el.getPersons() && city == el.getCityName() && hotel == el.getHotelName())
+                    if (el != null && el.equals(room))
                         i++;
                 }
             }
@@ -22,7 +26,8 @@ public class Controller {
         for (API api : apis) {
             if (api != null) {
                 for (Room el : api.getAll()) {
-                    if (el != null && price == el.getPrice() && persons == el.getPersons() && city == el.getCityName() && hotel == el.getHotelName()) {
+                    //if (el != null && price == el.getPrice() && persons == el.getPersons() && city == el.getCityName() && hotel == el.getHotelName()) {
+                    if (el != null && el.equals(room)){
                         appropriateRooms[b] = el;
                         b++;
                     }
