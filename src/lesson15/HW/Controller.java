@@ -26,8 +26,8 @@ public class Controller {
         for (API api : apis) {
             if (api != null) {
                 for (Room el : api.getAll()) {
-                    //if (el != null && price == el.getPrice() && persons == el.getPersons() && city == el.getCityName() && hotel == el.getHotelName()) {
-                    if (el != null && el.equals(room)){
+                    if (el != null && price == el.getPrice() && persons == el.getPersons() && city == el.getCityName() && hotel == el.getHotelName()) {
+                    //if (el != null && el.equals(room)){
                         appropriateRooms[b] = el;
                         b++;
                     }
